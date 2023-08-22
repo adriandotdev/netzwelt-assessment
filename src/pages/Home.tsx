@@ -2,11 +2,12 @@
 import Location from '../components/Location';
 import { useNavigate, Navigate, useLoaderData } from 'react-router-dom';
 import axios from 'axios';
+import Territory from '../interfaces/Territory';
 
 function Home() {
 
     const navigate = useNavigate();
-    const data = useLoaderData();
+    const data = useLoaderData() as Territory[];
 
     const logout = async () => {
 
