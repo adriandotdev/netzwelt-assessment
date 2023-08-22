@@ -8,7 +8,7 @@ type LocationType = {
 
 function Location({ location }: LocationType) {
 
-    const territories = useRef(null);
+    const territories = useRef(document.createElement('ul'));
 
     const showChildrenTerritories = (e: any) => {
         territories.current.classList.toggle('active');

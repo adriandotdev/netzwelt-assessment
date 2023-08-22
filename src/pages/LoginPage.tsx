@@ -1,4 +1,5 @@
 import axios from 'axios';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react'
 import { useNavigate, Navigate, useLoaderData } from 'react-router-dom';
 
@@ -12,7 +13,7 @@ function LoginPage() {
     const [password, setPassword] = useState<string>(() => '');
     const [isError, setError] = useState<boolean>(() => false);
 
-    const login = async (e) => {
+    const login = async (e: any) => {
 
         e.preventDefault();
 
