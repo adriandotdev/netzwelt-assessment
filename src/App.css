@@ -1,0 +1,10 @@
+.login-page {
+    min-height: 100vh;
+}
+
+.form-wrapper {
+    max-width: 25rem;
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
