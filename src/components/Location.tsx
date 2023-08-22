@@ -9,12 +9,22 @@ function Location({ location }: LocationType) {
 
     const territories = useRef(null);
 
+    const showChildrenTerritories = (e) => {
+        territories.current.classList.toggle('active');
+        e.currentTarget.classList.toggle('caret-down');
+    }
+
     return (
         <li key={location.id}>
-            <span onClick={(e) => {
+            <span tabIndex={0} onKeyDown={(e) => {
+                if (e.key === " " || e.code === "Space") {
 
-                territories.current.classList.toggle('active');
-                e.currentTarget.classList.toggle('caret-down');
+                    showChildrenTerritories(e);
+                }
+            }} onClick={(e) => {
+
+                showChildrenTerritories(e);
+
             }} className='caret'>{location.name}</span>
             {
                 location.children && location.children.length > 0 && (
