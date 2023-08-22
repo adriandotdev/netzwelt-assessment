@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef } from 'react'
 import Territory from '../interfaces/Territory';
 
@@ -9,7 +10,7 @@ function Location({ location }: LocationType) {
 
     const territories = useRef(null);
 
-    const showChildrenTerritories = (e) => {
+    const showChildrenTerritories = (e: any) => {
         territories.current.classList.toggle('active');
         e.currentTarget.classList.toggle('caret-down');
     }
