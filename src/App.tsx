@@ -1,19 +1,18 @@
-import React, { useEffect } from 'react'
-import axios from 'axios';
+import React from 'react'
+import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 
+const router = createBrowserRouter(
+
+  createRoutesFromElements(
+    <Route>
+
+    </Route>
+  )
+)
 function App() {
 
-  useEffect(() => {
-
-    axios.get('https://netzwelt-devtest.azurewebsites.net/Territories/All', {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-  }, [])
-
   return (
-    <div>App</div>
+    <RouterProvider router={router} />
   )
 }
 
