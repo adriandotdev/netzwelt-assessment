@@ -9,7 +9,7 @@ function Home() {
 
     const logout = async () => {
 
-        await axios.post('http://localhost:3001/account/logout', {}, { withCredentials: true });
+        await axios.post(`${import.meta.env.PROD ? import.meta.env.VITE_PROD_LINK : import.meta.env.VITE_DEV_LINK}/account/logout`, {}, { withCredentials: true });
         navigate('/account/login');
     }
 
@@ -39,7 +39,7 @@ export const HomeVerifierLoader = async () => {
 
     try {
 
-        const response = await axios.get('http://localhost:3001/home/index', { withCredentials: true });
+        const response = await axios.get(`${import.meta.env.PROD ? import.meta.env.VITE_PROD_LINK : import.meta.env.VITE_DEV_LINK}/home/index`, { withCredentials: true });
 
         return response.data;
     }

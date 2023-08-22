@@ -1,4 +1,3 @@
-import React from 'react'
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import Home from './pages/Home';

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate, Navigate, useLoaderData } from 'react-router-dom';
 
 function LoginPage() {
@@ -20,7 +20,7 @@ function LoginPage() {
 
         try {
 
-            const response = await axios.post('http://localhost:3001/account/login', { username, password }, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.PROD ? import.meta.env.VITE_PROD_LINK : import.meta.env.VITE_DEV_LINK}/account/login`, { username, password }, { withCredentials: true });
 
             if (response.status >= 200 && response.status <= 206) {
 
@@ -80,7 +80,7 @@ export const VerifierLoader = async () => {
 
     try {
 
-        const response = await axios.post('http://localhost:3001/api/verify', {}, { withCredentials: true });
+        const response = await axios.post(`${import.meta.env.PROD ? import.meta.env.VITE_PROD_LINK : import.meta.env.VITE_DEV_LINK}/api/verify`, {}, { withCredentials: true });
 
         return response.status;
     }
