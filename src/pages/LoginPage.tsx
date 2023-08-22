@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate, useLoaderData } from 'react-router-dom';
 
 function LoginPage() {
 
     const navigate = useNavigate();
+    const isLoggedIn = useLoaderData();
+
     const [isLoading, setLoading] = useState<boolean>(() => false);
     const [username, setUsername] = useState<string>(() => '');
     const [password, setPassword] = useState<string>(() => '');
@@ -36,6 +38,11 @@ function LoginPage() {
             }, 2000);
         }
     }
+
+    if (isLoggedIn) {
+        return <Navigate to="/home/" replace={true} />
+    }
+
     return (
         <main className='login-page container-fluid row justify-content-center align-items-center'>
 
@@ -67,6 +74,20 @@ function LoginPage() {
             </div>
         </main>
     )
+}
+
+export const VerifierLoader = async () => {
+
+    try {
+
+        const response = await axios.post('http://localhost:3001/api/verify', {}, { withCredentials: true });
+
+        return response.status;
+    }
+    catch (err) {
+
+        return null;
+    }
 }
 
 export default LoginPage

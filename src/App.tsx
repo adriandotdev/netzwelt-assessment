@@ -4,11 +4,14 @@ import LoginPage from './pages/LoginPage';
 import Home from './pages/Home';
 import './App.css';
 
+// Loaders
+import { VerifierLoader } from './pages/LoginPage';
+
 const router = createBrowserRouter(
 
   createRoutesFromElements(
     <Route>
-      <Route path="/account/login" element={<LoginPage />} />
+      <Route path="/account/login" element={<LoginPage />} loader={VerifierLoader} />
       <Route path="/home/" element={<Home />} />
     </Route>
   )
