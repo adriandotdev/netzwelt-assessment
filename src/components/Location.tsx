@@ -1,6 +1,11 @@
 import { useRef } from 'react'
+import Territory from '../interfaces/Territory';
 
-function Location({ location }) {
+type LocationType = {
+    location: Territory
+}
+
+function Location({ location }: LocationType) {
 
     const territories = useRef(null);
 
@@ -12,7 +17,7 @@ function Location({ location }) {
                 e.currentTarget.classList.toggle('caret-down');
             }} className='caret'>{location.name}</span>
             {
-                location?.children?.length > 0 && (
+                location.children && location.children.length > 0 && (
 
                     <ul ref={territories} className='nested'>
                         {location.children.map(territory => {

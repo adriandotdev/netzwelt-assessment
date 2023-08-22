@@ -1,9 +1,9 @@
-import React from 'react'
 import Location from '../components/Location';
+import Territory from '../interfaces/Territory';
 
 function Home() {
 
-    const data = [
+    const data: Territory[] = [
         {
             "id": "1",
             "name": "Metro Manila",
