@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Location from '../components/Location';
-import { useNavigate, Navigate, useLoaderData } from 'react-router-dom';
+import { useNavigate, useLoaderData } from 'react-router-dom';
 import axios from 'axios';
 import Territory from '../interfaces/Territory';
 
