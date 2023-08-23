@@ -26,7 +26,7 @@ function Location({ location }: LocationType) {
 
                 showChildrenTerritories(e);
 
-            }} className='caret'>{location.name}</span>
+            }} className={location.children && 'caret'}>{location.name}</span>
             {
                 location.children && location.children.length > 0 && (
 
