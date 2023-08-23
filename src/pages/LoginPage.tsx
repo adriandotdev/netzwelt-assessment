@@ -26,7 +26,7 @@ function LoginPage() {
             if (response.status >= 200 && response.status <= 206) {
 
                 setLoading(false);
-                navigate('/home');
+                navigate('/home/index');
             }
         }
         catch (err) {
@@ -40,8 +40,9 @@ function LoginPage() {
         }
     }
 
+    // Redirect if authenticated
     if (isLoggedIn) {
-        return <Navigate to="/home/" replace={true} />
+        return <Navigate to="/home/index" replace={true} />
     }
 
     return (

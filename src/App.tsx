@@ -16,7 +16,7 @@ const router = createBrowserRouter(
     <Route>
       <Route path="/" element={<Navigate to="/home" />} />
       <Route element={<PrivateRoute />} loader={PrivateRouteVerifier}>
-        <Route index path="/home" element={<Home />} loader={HomeVerifierLoader} />
+        <Route index path="/home/index" element={<Home />} loader={HomeVerifierLoader} />
       </Route>
       <Route path="/account/login" element={<LoginPage />} loader={VerifierLoader} />
     </Route>
