@@ -15,9 +15,9 @@ function Home() {
         navigate('/account/login');
     }
 
-    if (!data) {
-        return <Navigate to="/account/login" replace={true} />
-    }
+    // if (!data) {
+    //     return <Navigate to="/account/login" replace={true} />
+    // }
 
     return (
         <main className='mx-5 my-4'>
