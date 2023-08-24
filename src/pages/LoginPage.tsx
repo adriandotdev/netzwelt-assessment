@@ -17,6 +17,11 @@ function LoginPage() {
 
         e.preventDefault();
 
+        if (!username || !password) {
+            alert("Please provide a username and password.");
+            return;
+        }
+
         setLoading(true);
 
         try {
