@@ -41,7 +41,7 @@ function Location({ location }: LocationType) {
                         {location.children.map(territory => {
 
                             return (
-                                <Location location={territory} />
+                                <Location key={territory.id} location={territory} />
                             )
                         })}
                     </ul>

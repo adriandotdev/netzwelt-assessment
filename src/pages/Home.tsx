@@ -26,7 +26,7 @@ function Home() {
             <p className='mx-3'>Here are the list of territories</p>
             <ul>
                 {
-                    data.map(location => (<Location location={location} />))
+                    data.map(location => (<Location key={location.id} location={location} />))
                 }
             </ul>
         </main>
