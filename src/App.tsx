@@ -3,6 +3,8 @@ import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider, N
 import PrivateRoute from './utils/PrivateRoute';
 import LoginPage from './pages/LoginPage';
 import Home from './pages/Home';
+import Error from './pages/Error';
+
 import './App.css';
 
 // Loaders
@@ -14,11 +16,12 @@ const router = createBrowserRouter(
 
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="/" element={<Navigate to="/home/index" />} />
       <Route element={<PrivateRoute />} loader={PrivateRouteVerifier}>
         <Route index path="/home/index" element={<Home />} loader={HomeVerifierLoader} />
       </Route>
       <Route path="/account/login" element={<LoginPage />} loader={VerifierLoader} />
+      <Route path="*" element={<Error />} />
     </Route>
   )
 )
