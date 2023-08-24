@@ -6,6 +6,13 @@ type LocationType = {
     location: Territory
 }
 
+/**
+ * This is a recursive component, which handles the creation of hierarchy of the location.
+ * @param location 
+ * - location object with a type of Territory.
+ * @returns 
+ * - Location
+ */
 function Location({ location }: LocationType) {
 
     const territories = useRef(document.createElement('ul'));
